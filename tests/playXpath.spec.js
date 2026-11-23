@@ -30,3 +30,12 @@ test('Multi select', async()=>{
     //await page1.locator("[multiple]").selectOption({value:"option1"})
   //   await page1.locator("[multiple]").selectOption({label:"Option 5"})
 })
+
+test('Upload', async({page})=>{
+
+  await page.goto("https://uploadnow.io/")
+  await page.locator('//input[@type="file"]').setInputFiles('./screenshot/insta_title.png')
+  await page.getByText('Validate and upload').click();
+  
+  
+})
