@@ -37,5 +37,4 @@ test('Upload', async({page})=>{
   await page.locator('//input[@type="file"]').setInputFiles('./screenshot/insta_title.png')
   await page.getByText('Validate and upload').click();
   
-  
 })
