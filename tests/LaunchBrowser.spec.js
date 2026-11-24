@@ -17,7 +17,7 @@ test("title", async()=>{
 test("Search mobile", async({page})=>{
 await page.goto("https://www.amazon.in/");
 await page.locator("#twotabsearchtextbox").fill("mobiles");
-await page.locator("[type = 'submit']").click;
+await page.locator("[type = 'submit']").click();
 
 })
 
