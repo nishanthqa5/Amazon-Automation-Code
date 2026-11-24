@@ -18,6 +18,7 @@ test('launch flipkart', async({page})=>{
    console.log(await page.url());
      await page.goto("https://www.flipkart.com/");
    console.log(await page.url());
+
   // await page.screenshot({path:"C:\\Users\\Nishanth PC\\playwright\\Playwright_Screenshot\\screenshot1.jpg"});
    
 

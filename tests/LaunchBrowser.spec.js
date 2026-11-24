@@ -11,6 +11,7 @@ test("title", async()=>{
   const context2 = await browser.newContext();
   const page2 = await context2.newPage();
   await page2.goto("https://www.instagram.com/");
+  
 
 })
 
@@ -18,7 +19,7 @@ test("Search mobile", async({page})=>{
 await page.goto("https://www.amazon.in/");
 await page.locator("#twotabsearchtextbox").fill("mobiles");
 await page.locator("[type = 'submit']").click();
-
+await page.click();
 })
 
 test("DemoQA", async({page})=>{
