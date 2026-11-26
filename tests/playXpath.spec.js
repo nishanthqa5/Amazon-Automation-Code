@@ -39,3 +39,26 @@ test('Upload', async({page})=>{
   
   
 })
+
+test('Handling alert', async({page})=>{
+   await page.goto("https://demoqa.com/alerts")
+   page.on('dialog', async(Dialog)=>{
+    if(Dialog.type() === 'alert'){
+      console.log(Dialog.message());
+      await  Dialog.accept();
+      console.log("handled simple alert")
+    }
+    else if(Dialog.type()==='confirm'){
+     await Dialog.dismiss()
+      console.log("handled confirm alert")
+    }
+      else if(Dialog.type()==='prompt'){ 
+        await  Dialog.accept("Nishanth")
+        console.log("handled prompt alert")
+      }
+   })
+ await page.locator("#alertButton").click();
+ await page.locator("#timerAlertButton",{timeout: 5000 }).click()
+ await page.locator("#confirmButton").click()
+ await page.locator("#promtButton").click()
+})
